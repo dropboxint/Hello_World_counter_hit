@@ -1,0 +1,14 @@
+- hosts: localhost
+  connection: local
+  
+
+  tasks:
+    - name: Docker compose
+      docker_compose:
+         #project_name: 
+         project_src: .
+         build: yes
+      register: output
+
+    - debug:
+        var: output
